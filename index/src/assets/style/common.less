@@ -1,0 +1,195 @@
+/* 这里是全局样式在APP.VUE里面引用 */
+/* 使用了px2rem插件，按设计稿宽度750px，样式表中直接以px为单位 */
+
+/* 基础样式 */
+@import './base/variant.less';       // 变量声明
+@import './base/mobileReset.less';   // 重置移动端浏览器样式
+@import './base/flex.less';          // 弹性布局兼容性方法
+@import './base/compat.less';        // 其它兼容性方法
+@import './base/function.less';      // 其它方法
+/* 组件样式 */
+@import './components/layout.less';  // 布局类
+// @import './components/button.less';  // 按钮
+// @import './components/list.less';    // 列表
+// @import './components/form.less';    // 表单
+// @import './components/modal.less';   // 模态框
+// @import './components/others.less';   // 模态框
+/****自定义全局样式*****/
+
+i {
+    font-style: normal;
+}
+html,p,button {
+    color: white;
+}
+
+.error-msg {
+	position: absolute;
+    bottom: 0;
+    color: red;
+    line-height: normal;
+    left: @margin-primary;
+    font-size: 24px;
+}
+.error-border {
+    // border: 1px solid red!important;
+}
+.btn {
+    width: 200px;
+    height: 68px;
+    line-height: 68px;
+    border-radius: 8px;
+    font-size: 32px;
+}
+.btn-default {
+    background-color: @btn-default;
+}
+.btn-green {
+    background: linear-gradient(90deg,rgba(108,234,114,1) 0%,rgba(26,184,0,1) 100%);
+    background: -webkit-linear-gradient(90deg,rgba(108,234,114,1) 0%,rgba(26,184,0,1) 100%);
+}
+.btn-red {
+    background:linear-gradient(90deg,rgba(255,96,96,1) 0%,rgba(254,45,45,1) 100%)!important;
+    background:-webkit-linear-gradient(90deg,rgba(255,96,96,1) 0%,rgba(254,45,45,1) 100%)!important;
+}
+.btn-origin {
+    background:-webkit-linear-gradient(90deg,rgba(245,190,40,1) 0%,rgba(255,132,42,1) 100%);
+    background:linear-gradient(90deg,rgba(245,190,40,1) 0%,rgba(255,132,42,1) 100%);
+}
+.btn-gradient-blue {
+    background:-webkit-linear-gradient(137deg,rgba(52,223,255,1) 0%,rgba(8,145,254,1) 100%);
+    background:linear-gradient(137deg,rgba(52,223,255,1) 0%,rgba(8,145,254,1) 100%);
+}
+.gradient-origin {
+    background: -webkit-linear-gradient(90deg,#EA4101 0%,#FF425C 100%);
+    background: linear-gradient(90deg,#EA4101 0%,#FF425C 100%);
+}
+.btn-blue {
+    background-color: @base-blue;
+}
+.btn-detail {
+    width: 140px;
+    margin-bottom: @margin-primary;
+}
+.btn-small {
+    width: 140px;
+}
+.base-form {
+    margin: @margin-primary;
+    .form-item {
+        font-size: 16PX;
+        position: relative;
+        padding: 10px 0;
+        box-shadow:0px 1px 0px 0px rgba(238,238,238,1);
+        .display-flex();
+        align-items: center;
+        &:last-of-type{
+            margin-bottom: 140px;
+            box-shadow: none;
+        }
+        label {
+            color:#000;
+            display: inline-block;
+            flex: 0 0 100PX;
+            &.mar {
+                margin-bottom: 20px;
+            }
+        }
+        input {
+            margin:0;
+            // background-color: @easy-black;
+            font-size: 14PX;
+            color: #666;
+            padding: 0 30px;
+            border: none;
+            &.file {
+                position: absolute;
+                width: 352px;
+                height: 210px;
+                margin: 0;
+                left: 0;
+                top: 60px;
+                opacity: 0;
+            }
+            &.checkbox {
+                position: relative;
+                width: 22PX;
+                height: 22PX;
+                border-radius: 50%;
+                border: 1px solid rgba(211,211,211,1);
+                padding: 0 ;
+                &:checked::before {
+                    content: '';
+                    position: absolute;
+                    background-color: @base-blue;
+                    left: 50%;
+                    top: 50%;
+                    .transform(translate(-50%,-50%));
+                    width: 60%;
+                    height: 60%;
+                    border-radius: 50%;
+
+                }
+
+                // }
+
+            }
+        }
+        .img {
+            width: 352px;
+            height: 210px;
+            display: block;
+        }
+        .img-code {
+            height: 68px;
+            border-radius: 8px;
+            margin:20px 0 50px;
+            margin-left: 10px;
+        }
+        .item-flex {
+            .display-flex();
+            align-items: center;
+            button {
+                // margin: 20px 0 50px 30px;
+                position: relative;
+                flex: 0 0 228px;
+                height: 80px;
+                font-size: 14PX;
+                color: @base-blue;
+                border-radius: 0;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    height: 50%;
+                    width: 1px;
+                    background-color: #666;
+                    top: 50%;
+                    left: 0;
+                    .transform(translateY(-50%));
+                }
+            }
+        }
+        .agree {
+            font-size: 14PX;
+            color: @base-blue;
+        }
+        .error {
+            position: absolute;
+            color: red;
+            font-size: 10PX;
+            bottom: 0;
+            left: 30px;
+          }
+    }
+    .mar {
+        margin-bottom: 50px;
+    }
+    .btn-submit {
+        width: 100%;
+        height: 44PX;
+    }
+}
+.no-msg {
+    text-align: center;
+    margin-top:30px;
+}
